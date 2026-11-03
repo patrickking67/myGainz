@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"mygainz","runtimeExecutable":"npm","runtimeArgs":["--prefix","mygainz","start"],"port":3000}]}
