@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>myGainz - gym routine builder</title>
+<meta name="description" content="myGainz is a React and Firebase web app for building workout routines and looking up exercises with demo animations. A CMSI 2021 class project.">
+<meta property="og:title" content="myGainz - gym routine builder">
+<meta property="og:description" content="Build routines and look up exercises. React, Firebase, Tailwind.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/exercises.png">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{--bg:#f8fafc;--fg:#1e293b;--muted:#64748b;--card:#fff;--line:#e2e8f0;--accent:#2563eb;--accent-fg:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--card:#1e293b;--line:#334155;--accent:#60a5fa;--accent-fg:#0f172a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px}
+.logo{display:block;width:min(100%,260px);height:auto;background:#fff;border-radius:12px;padding:12px}
+h1{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.15;margin:24px 0 12px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;margin:0 8px 8px 0}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+section{padding:24px 0}
+h2{font-size:1.5rem;margin:0 0 16px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted)}
+figure{margin:0}
+figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;display:block}
+figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
+footer{border-top:1px solid var(--line);margin-top:24px;padding:24px 0 48px;color:var(--muted);font-size:.95rem}
+ul.team{padding-left:1.2rem}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img class="logo" src="img/logo.png" alt="myGainz logo" width="640" height="159">
+  <h1>Build gym routines and look up exercises.</h1>
+  <p class="lead">myGainz lets you look up exercises with demo animations and save routines to your own account, starting from a preset or building your own.</p>
+  <a class="btn" href="https://mygainz2022.web.app/">Open the app</a>
+  <a class="btn alt" href="https://github.com/patrickking67/myGainz">View source</a>
+</header>
+<main class="wrap">
+  <section aria-labelledby="features">
+    <h2 id="features">Features</h2>
+    <div class="grid">
+      <div class="card"><h3>Exercise lookup</h3><p>Browse and filter the ExerciseDB catalog by name, muscle group, or equipment. Each exercise has a demo animation.</p></div>
+      <div class="card"><h3>Programs</h3><p>Start from the starter routines or build your own from existing and custom exercises.</p></div>
+      <div class="card"><h3>Saved per user</h3><p>Sign in with Google and your routines are stored in your own Firestore document.</p></div>
+      <div class="card"><h3>Daily motivation</h3><p>The home page pulls a quote from the Type Fit quotes API.</p></div>
+    </div>
+  </section>
+  <section aria-labelledby="shots">
+    <h2 id="shots">Screenshot</h2>
+    <figure>
+      <img src="img/exercises.png" alt="The myGainz exercises page showing a searchable grid of exercise cards with animations and a sidebar for navigation" width="1280" height="800" loading="lazy">
+      <figcaption>The exercise browser, 1,331 exercises across 111 pages.</figcaption>
+    </figure>
+  </section>
+  <section aria-labelledby="stack">
+    <h2 id="stack">Built with</h2>
+    <p>React 18, React Router 6, Tailwind CSS, Firebase Auth and Firestore, ExerciseDB, and Type Fit.</p>
+    <p>To run it locally: clone the repo, then in <code>mygainz/</code> run <code>npm ci</code> and <code>npm start</code>.</p>
+  </section>
+  <section aria-labelledby="team">
+    <h2 id="team">Team</h2>
+    <p>Built for CMSI 2021 Website Application Development at Loyola Marymount University, Fall 2022, by:</p>
+    <ul class="team">
+      <li>Lucian Prinz</li><li>Maddie McDowell</li><li>Ryan Cordero</li><li>Patrick King</li>
+    </ul>
+    <p>The logo was drawn by Maddie McDowell's mom.</p>
+  </section>
+</main>
+<footer><div class="wrap">Class project, not actively maintained. The progress tracking page was planned but is not built.</div></footer>
+</body>
+</html>
