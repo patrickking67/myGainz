@@ -1,6 +1,6 @@
 <div align="center">
 
-# ![image](https://github.com/patrickgking03/cmsi2021-myGainz/blob/main/mygainz/src/logo.png?raw=true)
+# ![image](mygainz/src/logo.png)
   
   ![React](https://img.shields.io/badge/-React-blue?logo=react&logoColor=darkgrey&style=flat)
   ![HTML](https://img.shields.io/badge/-HTML-brightorange?logo=html&logoColor=white&style=flat)
@@ -22,7 +22,8 @@
 - [Technologies Used](#technologies-used)
 - [Challenges and Future Plans](#challenges-and-future-plans)
 - [Special Shoutout](#special-shoutout)
-- [Project Rundown & Presentation](#project-rundown-&-presentation)
+- [Run Locally](#run-locally)
+- [Project Rundown & Presentation](#project-rundown--presentation)
 
 ## About
 Using an exercise API, we are creating a website app for tracking your progress in the gym and creating a program, called myGainz. This app will contain a workout routine using pre-existing workouts or custom workouts. You will be able to track weight/reps for each workout which saves as progress, notify friends if you hit a personal record, and able to lookup new workouts and be shown a gif of how to do it. This project was created for CMSI 2021 Website Application Development, Fall 2022, Homework #4.
@@ -48,10 +49,26 @@ Some challenges we had were setting up firebase to handle user-specific data, wh
 For myGainz web app, we would like to give a special thanks to Maddie McDowell's mom. She created the awesome logo for our web app that really tied together the visuals, css, & colors of it all.
 #### ![image](https://gettinggrowth.com/wp-content/uploads/2020/10/how-to-get-free-instagram-shoutouts-2.png)
 
+## Run Locally
+Requires Node 20 or newer.
+
+```sh
+cd mygainz
+npm ci
+npm start
+```
+
+Other scripts: `npm run build` (production build into `mygainz/build`) and `npm test`. There are no tests yet. CI runs the test and build steps on every push and pull request.
+
+The Firebase web config in `mygainz/src/services/firebaseConfig.js` points at the original class project. Firebase web keys identify the project and are not secrets; access is controlled by Firebase security rules. To run your own copy, create a Firebase project with Google sign-in and Firestore enabled and replace that config.
+
+The Progress page is a placeholder and the program-tracking features described in About are not built yet.
+
 ## Project Rundown & Presentation:
+- [Project site (GitHub Pages)](https://patrickking67.github.io/myGainz/)
 - [Live Link to Site (Firebase Hosting)](https://mygainz2022.web.app/)
 - [Google Docs](https://docs.google.com/document/d/1zEuQRMm35yhWzDEQaDIE1fbfXsbD-Eu_G4W0cjcHVn8/edit?usp=sharing&resourcekey=0-_JtpEmCDCSLdlk72pwKKNg)
-- [Google Sheets](https://docs.google.com/presentation/d/1B-iUcsR9zvaeQsjn87xjfL-4Itl4W_KHx_gEGqvTJwg/edit#slide=id.g1b885cb552a_0_19)
+- [Google Slides](https://docs.google.com/presentation/d/1B-iUcsR9zvaeQsjn87xjfL-4Itl4W_KHx_gEGqvTJwg/edit#slide=id.g1b885cb552a_0_19)
 
 **Title:** Homework #4 - myGainz <br>
 **Department:** Computer Science <br>
