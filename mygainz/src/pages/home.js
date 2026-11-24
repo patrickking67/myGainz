@@ -1,7 +1,16 @@
 import { useOutletContext } from "react-router-dom";
 import { InitiateSignIn } from '../services/authService';
 import { useState, useEffect } from 'react';
-import moment from 'moment';
+
+// Formats an ISO or RFC date string like "Wed, Dec 14, 2022, 8:00 PM".
+function formatDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "unknown";
+  return date.toLocaleString("en-US", {
+    weekday: "short", month: "short", day: "numeric", year: "numeric",
+    hour: "numeric", minute: "2-digit",
+  });
+}
 
 export default function Home() {
   const user = useOutletContext();
@@ -22,8 +31,8 @@ export default function Home() {
         <h1 className="page-header">Home</h1>
         {user ? <div>
           <h2 className="page-header text-gray-500 text-base font-light">Welcome back, <span className="font-medium">{user.displayName}</span></h2>
-          <h2 className="page-header text-gray-500 text-base font-light">Tracking gainz since: <span className="text-blue-500">{moment(user.metadata.creationTime).format('llll')} </span></h2>
-          <h2 className="page-header text-gray-500 text-base font-light">Last login at: <span className="text-blue-500">{moment(user.metadata.lastLoginTime).format('llll')}</span> </h2>
+          <h2 className="page-header text-gray-500 text-base font-light">Tracking gainz since: <span className="text-blue-500">{formatDate(user.metadata.creationTime)} </span></h2>
+          <h2 className="page-header text-gray-500 text-base font-light">Last login at: <span className="text-blue-500">{formatDate(user.metadata.lastLoginTime)}</span> </h2>
         </div>
           : <h2 className="page-header text-gray-500 text-base font-light">You aren't signed in. You can <a href="/exercises" className="text-blue-500 font-medium">browse exercises</a> or <span onClick={InitiateSignIn} className="text-blue-500 font-medium cursor-pointer">click here</span>  to sign in</h2>
         }
